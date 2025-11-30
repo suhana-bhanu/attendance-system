@@ -254,6 +254,49 @@ npm run build
 3. **Token Expired**: Logout and login again
 4. **Port Already in Use**: Change PORT in backend/.env file
 
+## Deployment
+
+### Quick Deployment (15 minutes)
+
+#### 1. MongoDB Atlas Setup
+1. Go to https://www.mongodb.com/cloud/atlas/register
+2. Create free account → Create free cluster (M0)
+3. Create database user (Database Access) → Choose "Atlas admin" role
+4. Allow network access: Add IP → "Allow Access from Anywhere" (0.0.0.0/0)
+5. Get connection string: Database → Connect → Connect your application → Copy string
+6. Replace `<password>` in connection string with your actual password
+
+#### 2. Deploy Backend (Render)
+1. Push code to GitHub
+2. Go to https://render.com → Sign up with GitHub
+3. New → Web Service → Connect GitHub repo
+4. Settings:
+   - **Root Directory**: `backend`
+   - **Build Command**: `npm install`
+   - **Start Command**: `npm start`
+5. Environment Variables:
+   - `MONGODB_URI` = Your MongoDB connection string
+   - `JWT_SECRET` = Generate: `node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"`
+   - `NODE_ENV` = `production`
+   - `FRONTEND_URL` = Your frontend URL (add after deploying frontend)
+6. Deploy → Copy backend URL
+
+#### 3. Deploy Frontend (Vercel)
+1. Go to https://vercel.com → Sign up with GitHub
+2. New Project → Import GitHub repo
+3. Settings:
+   - **Root Directory**: `frontend`
+   - **Framework**: Create React App
+4. Environment Variable:
+   - `REACT_APP_API_URL` = `https://your-backend-url.onrender.com/api`
+5. Deploy → Copy frontend URL
+6. Update backend `FRONTEND_URL` environment variable with frontend URL
+
+### Generate JWT Secret
+```bash
+node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+```
+
 ## License
 
 This project is open source and available for educational purposes.
