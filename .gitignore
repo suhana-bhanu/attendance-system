@@ -1,0 +1,6 @@
+node_modules/
+.env
+attendance_export.csv
+*.log
+
+
