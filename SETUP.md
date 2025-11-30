@@ -12,9 +12,13 @@ NODE_ENV=development
 ```
 
 **Note**: 
-- For MongoDB Atlas, use: `mongodb+srv://<username>:<password>@cluster.mongodb.net/attendance_system`
-  - Replace `<username>` and `<password>` with your actual MongoDB credentials
-  - ⚠️ **NEVER commit real credentials to Git!**
+- For MongoDB Atlas, use the connection string format:
+  ```
+  mongodb+srv://<username>:<password>@<cluster>.<region>.mongodb.net/attendance_system
+  ```
+  - Replace ALL placeholders (`<username>`, `<password>`, `<cluster>`, `<region>`) with your actual MongoDB Atlas values
+  - Get your connection string from MongoDB Atlas dashboard → Connect → Connect your application
+  - ⚠️ **NEVER commit real credentials to Git!** Only use in `.env` files or environment variables
 - Change `JWT_SECRET` to a strong random string in production
 
 ## Frontend Environment Variables (Optional)

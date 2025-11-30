@@ -75,10 +75,12 @@ When creating a database user in MongoDB Atlas, you need to choose the right rol
 - **Replace `<password>` with your actual password from step 5**
 - **Replace `<dbname>` with `attendance_system`** (or your preferred database name)
 
-Example connection string (replace with your actual credentials):
+Example connection string format (you'll get this from MongoDB Atlas):
 ```
-mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@cluster0.xxxxx.mongodb.net/attendance_system?retryWrites=true&w=majority
+mongodb+srv://<username>:<password>@<cluster-name>.<region>.mongodb.net/<database-name>?retryWrites=true&w=majority
 ```
+
+**Important**: Replace all placeholders (`<username>`, `<password>`, `<cluster-name>`, etc.) with your actual values from MongoDB Atlas.
 
 ## Quick Reference
 
@@ -89,14 +91,19 @@ mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@cluster0.xxxxx.mongodb.net/attendance_
 ✅ Use **"Read and write"** with specific database - Most secure
 
 ### Connection String Format:
+The connection string follows this pattern:
 ```
-mongodb+srv://<USERNAME>:<PASSWORD>@cluster0.xxxxx.mongodb.net/<DATABASE_NAME>?retryWrites=true&w=majority
+mongodb+srv://<username>:<password>@<cluster-name>.<region>.mongodb.net/<database-name>?retryWrites=true&w=majority
 ```
 
-Replace:
-- `<USERNAME>` = Your database username
-- `<PASSWORD>` = Your database password (NEVER commit this to Git!)
-- `<DATABASE_NAME>` = `attendance_system` (or your choice)
+Replace placeholders with your actual values:
+- `<username>` = Your database username
+- `<password>` = Your database password (NEVER commit this to Git!)
+- `<cluster-name>` = Your cluster name (e.g., cluster0)
+- `<region>` = Your cluster region (e.g., abc123)
+- `<database-name>` = `attendance_system` (or your choice)
+
+**⚠️ Security Note**: Never commit real connection strings to Git. Always use environment variables.
 
 ## Troubleshooting
 

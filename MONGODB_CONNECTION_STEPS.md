@@ -20,10 +20,8 @@
    - Version: Select the latest version (usually 5.5 or higher)
 
 4. **Copy the Connection String:**
-   - You'll see something like:
-     ```
-     mongodb+srv://<username>:<password>@cluster0.xxxxx.mongodb.net/?retryWrites=true&w=majority
-     ```
+   - You'll see a connection string with placeholders
+   - Format: `mongodb+srv://<username>:<password>@<cluster>.<region>.mongodb.net/?retryWrites=true&w=majority`
    - **Click "Copy"** button
 
 5. **Important: Replace Placeholders:**
@@ -31,23 +29,28 @@
    - Replace `<password>` with your database password
    - Add database name: Change `?retryWrites=true` to `/attendance_system?retryWrites=true`
    
-   **Final format should look like (replace with YOUR actual credentials):**
+   **Final format should look like (replace ALL placeholders with YOUR actual values):**
    ```
-   mongodb+srv://<YOUR_USERNAME>:<YOUR_PASSWORD>@cluster0.xxxxx.mongodb.net/attendance_system?retryWrites=true&w=majority
+   mongodb+srv://<your-username>:<your-password>@<your-cluster>.<region>.mongodb.net/attendance_system?retryWrites=true&w=majority
    ```
+   
+   ⚠️ **SECURITY**: Never commit real credentials to Git! Only use placeholders in documentation.
 
 ### Example:
-If your connection string is:
+Your connection string from MongoDB Atlas will have placeholders like:
 ```
-mongodb+srv://<username>:<password>@cluster0.abc123.mongodb.net/?retryWrites=true&w=majority
-```
-
-Replace placeholders with your actual credentials:
-```
-mongodb+srv://<YOUR_USERNAME>:<YOUR_PASSWORD>@cluster0.abc123.mongodb.net/attendance_system?retryWrites=true&w=majority
+mongodb+srv://<username>:<password>@<cluster>.<region>.mongodb.net/?retryWrites=true&w=majority
 ```
 
-⚠️ **SECURITY WARNING**: Never commit real passwords to Git! Only use placeholders in documentation.
+After replacing placeholders and adding database name, it becomes:
+```
+mongodb+srv://your-username:your-password@your-cluster.your-region.mongodb.net/attendance_system?retryWrites=true&w=majority
+```
+
+⚠️ **SECURITY WARNING**: 
+- Replace ALL placeholders with your actual values
+- Never commit real passwords to Git!
+- Only store real credentials in `.env` files or environment variables
 
 ### What You'll Use This For:
 
