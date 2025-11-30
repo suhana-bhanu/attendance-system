@@ -12,7 +12,9 @@ NODE_ENV=development
 ```
 
 **Note**: 
-- For MongoDB Atlas, use: `mongodb+srv://username:password@cluster.mongodb.net/attendance_system`
+- For MongoDB Atlas, use: `mongodb+srv://<username>:<password>@cluster.mongodb.net/attendance_system`
+  - Replace `<username>` and `<password>` with your actual MongoDB credentials
+  - ⚠️ **NEVER commit real credentials to Git!**
 - Change `JWT_SECRET` to a strong random string in production
 
 ## Frontend Environment Variables (Optional)

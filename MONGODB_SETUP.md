@@ -75,9 +75,9 @@ When creating a database user in MongoDB Atlas, you need to choose the right rol
 - **Replace `<password>` with your actual password from step 5**
 - **Replace `<dbname>` with `attendance_system`** (or your preferred database name)
 
-Example connection string:
+Example connection string (replace with your actual credentials):
 ```
-mongodb+srv://admin:YourPassword123@cluster0.xxxxx.mongodb.net/attendance_system?retryWrites=true&w=majority
+mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@cluster0.xxxxx.mongodb.net/attendance_system?retryWrites=true&w=majority
 ```
 
 ## Quick Reference
@@ -90,13 +90,13 @@ mongodb+srv://admin:YourPassword123@cluster0.xxxxx.mongodb.net/attendance_system
 
 ### Connection String Format:
 ```
-mongodb+srv://USERNAME:PASSWORD@cluster0.xxxxx.mongodb.net/DATABASE_NAME?retryWrites=true&w=majority
+mongodb+srv://<USERNAME>:<PASSWORD>@cluster0.xxxxx.mongodb.net/<DATABASE_NAME>?retryWrites=true&w=majority
 ```
 
 Replace:
-- `USERNAME` = Your database username
-- `PASSWORD` = Your database password
-- `DATABASE_NAME` = `attendance_system` (or your choice)
+- `<USERNAME>` = Your database username
+- `<PASSWORD>` = Your database password (NEVER commit this to Git!)
+- `<DATABASE_NAME>` = `attendance_system` (or your choice)
 
 ## Troubleshooting
 

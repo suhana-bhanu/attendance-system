@@ -31,9 +31,9 @@
    - Replace `<password>` with your database password
    - Add database name: Change `?retryWrites=true` to `/attendance_system?retryWrites=true`
    
-   **Final format should look like:**
+   **Final format should look like (replace with YOUR actual credentials):**
    ```
-   mongodb+srv://admin:YourPassword123@cluster0.xxxxx.mongodb.net/attendance_system?retryWrites=true&w=majority
+   mongodb+srv://<YOUR_USERNAME>:<YOUR_PASSWORD>@cluster0.xxxxx.mongodb.net/attendance_system?retryWrites=true&w=majority
    ```
 
 ### Example:
@@ -42,10 +42,12 @@ If your connection string is:
 mongodb+srv://<username>:<password>@cluster0.abc123.mongodb.net/?retryWrites=true&w=majority
 ```
 
-And your username is `admin` and password is `MyPass123`, change it to:
+Replace placeholders with your actual credentials:
 ```
-mongodb+srv://admin:MyPass123@cluster0.abc123.mongodb.net/attendance_system?retryWrites=true&w=majority
+mongodb+srv://<YOUR_USERNAME>:<YOUR_PASSWORD>@cluster0.abc123.mongodb.net/attendance_system?retryWrites=true&w=majority
 ```
+
+⚠️ **SECURITY WARNING**: Never commit real passwords to Git! Only use placeholders in documentation.
 
 ### What You'll Use This For:
 
